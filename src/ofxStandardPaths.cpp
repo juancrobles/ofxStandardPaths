@@ -1,6 +1,11 @@
 #include "ofxStandardPaths.h"
 #include "ofFileUtils.h"
+using namespace std;
+#ifdef defined(TARGET_IOS)
+const string ofxStandardPaths::HomeLocation = "";
+#else
 const string ofxStandardPaths::HomeLocation = ofFilePath::getUserHomeDir();
+#endif
 
 #ifdef TARGET_OSX
     const string ofxStandardPaths::DesktopLocation = ofFilePath::getUserHomeDir()+"/Desktop";
